@@ -1,0 +1,50 @@
+/* LOGO WRAPER */
+
+.wrapper {
+  font-size: 1.6rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* mix-blend-mode: screen; */
+  cursor: pointer;
+}
+
+.wrapper a {
+  font-family: Impact, "Anton", Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  display: block;
+  position: absolute;
+  color: var(--white);
+  letter-spacing: -0.005em;
+}
+
+.wrapper a:hover {
+  color: var(--yellow);
+}
+
+.wrapper a::before,
+.wrapper a::after {
+  content: attr(data-text);
+  display: block;
+  position: relative;
+  padding: 0 0.1em;
+  z-index: 1;
+}
+
+.wrapper a::before {
+  position: absolute;
+  -webkit-text-stroke: 0.1em black;
+  z-index: 0;
+}
+
+.wrapper a:first-child {
+  transform: translate(-0.255em, -0.25em);
+  /* color: var(--yellow); */
+}
+
+.wrapper a:last-child {
+  /* color: var(--pink); */
+  transform: translate(0.255em, 0.25em);
+}

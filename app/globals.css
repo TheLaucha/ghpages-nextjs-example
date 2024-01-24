@@ -1,107 +1,231 @@
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+  /* colors */
+  --black: #1b1a17;
+  --white: #f8f8e8;
+  --black_purple: #100720;
+  --purple: #31087b;
+  --pink: #fa2fb5;
+  --yellow: #ffc23c;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* font-family: 'Secular One', sans-serif; */
+  font-family: "Inconsolata", monospace;
+  background-color: var(--black_purple);
+  color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Secular One", sans-serif;
+}
+
+ul {
+  list-style-type: none;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* MAIN */
+main {
+  margin-top: 5rem;
+}
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 90vw;
+  padding: 2rem;
+}
+
+.text-yellow {
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+.text-pink {
+  color: var(--pink);
+  font-weight: 600;
+}
+
+.section__title {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* BUTTONS */
+
+.btn_home {
+  background-color: var(--purple);
+  border: 2px solid var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--white) 4px 4px 0 0;
+  color: var(--white);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0 1.2rem;
+  line-height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all 0.2s;
+  font-family: "Inconsolata", monospace;
+}
+
+.btn_home:hover {
+  background-color: #30087b83;
+}
+
+.btn_home:active {
+  box-shadow: var(--white) 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+/* MODAL */
+.modal {
+  display: none; /* El modal comienza oculto */
+  place-items: center;
+  position: fixed; /* Posición fija para que se muestre por encima de todo */
+  z-index: 1; /* Índice de capas alto para que se muestre por encima de todo */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Habilitar el scroll si el contenido es mayor que la pantalla */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+  position: relative;
+  background-color: var(--white);
+  margin: 15% auto; /* Centrado vertical y horizontalmente */
+  color: var(--black);
+  padding: 0.5rem 1rem 1rem 1rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-content .wrapper {
+  justify-content: left;
+}
+
+.modal-content .wrapper a {
+  color: var(--yellow);
+  cursor: default;
+}
+
+/* Estilos para el botón "cerrar" */
+.close {
+  color: #000;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #750d0d;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn_wsp {
+  background-color: #1bd741;
+  border: 2px solid var(--white);
+  box-shadow: var(--white) 4px 4px 0 0;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn_wsp:hover {
+  background-color: #1bd74185;
+}
+
+.wsp_icon {
+  width: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  /* ASESORIAS */
+  #asesorias .plan__info--list {
+    grid-template-columns: 1fr;
+  }
+
+  #pasos .material-icons {
+    font-size: 1rem;
+  }
+
+  #pasos .card__title {
+    font-size: 1rem;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    width: 90vw;
+    padding: 0.5rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .container h1 {
+    font-size: 1.4rem;
+  }
+
+  .container h2 {
+    font-size: 1.2rem;
+  }
+
+  .container .btn_home {
+    font-size: 1rem;
+    line-height: 2.5rem;
+    width: 100%;
+  }
+}
+
+@keyframes animacion {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

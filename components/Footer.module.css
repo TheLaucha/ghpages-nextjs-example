@@ -1,0 +1,23 @@
+.footer {
+  min-height: 50vh;
+  width: 100%;
+  background-color: var(--purple);
+}
+
+#contacto {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+  scroll-margin-top: 5rem;
+}
+
+.social__media__logo {
+  width: 64px;
+  transition: all 0.2s;
+}
+
+.social__media__logo:hover {
+  transform: scale(1.2);
+}

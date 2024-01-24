@@ -1,0 +1,38 @@
+/* SOBRE MI  */
+
+#sobre-mi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  scroll-margin-top: 5rem;
+}
+
+#sobre-mi .section__title {
+  grid-column-start: span 2;
+}
+
+.about_me_img {
+  max-width: 100%;
+  border-radius: 1rem 3rem 1rem 3rem;
+  border: 2px solid var(--white);
+  box-shadow: 5px 5px 10px 3px #00000036;
+}
+
+.about_me_info {
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about_me_info_title {
+  font-size: 1.5rem;
+}
+
+.training_list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}

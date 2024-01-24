@@ -1,0 +1,86 @@
+.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: justify;
+}
+
+.presentation__title {
+  font-family: "Secular One", sans-serif;
+  font-size: 2rem;
+}
+.presentation__subtitle {
+  font-family: "Secular One", sans-serif;
+  font-size: 2.5rem;
+  text-align: left;
+}
+.presentation__paragraph {
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.home_image {
+  text-align: center;
+  /* padding: 1rem; */
+}
+
+.perfil_img {
+  max-width: 100%;
+  border-radius: 3rem 1rem 3rem 1rem;
+  border: 2px solid var(--white);
+  box-shadow: 5px 5px 10px 3px #00000036;
+}
+
+/* BUTTONS */
+
+.btn_home {
+  background-color: var(--purple);
+  border: 2px solid var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--white) 4px 4px 0 0;
+  color: var(--white);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0 1.2rem;
+  line-height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all 0.2s;
+  font-family: "Inconsolata", monospace;
+}
+
+.btn_home:hover {
+  background-color: #30087b83;
+}
+
+.btn_home:active {
+  box-shadow: var(--white) 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media screen and (max-width: 768px) {
+  .btn_home {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+
+  /* HOME */
+  .home {
+    grid-template-columns: 1fr;
+  }
+}

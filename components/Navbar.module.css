@@ -1,0 +1,84 @@
+/* ==== NAVBAR ==== */
+.nav {
+  font-family: "Inconsolata", monospace;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #31087b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  border-bottom: 2px solid var(--yellow);
+  transition: all 0.2s;
+  z-index: 1;
+}
+
+.nav .navIcon {
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.nav .navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.navbar .navItem {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.navbar .navItem .navLink {
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.navbar .navItem .navLink:hover {
+  color: var(--yellow);
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    padding: 1rem 2rem;
+    background-color: var(--purple);
+  }
+
+  .nav .navbar {
+    position: absolute;
+    top: -500px;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    transition: all 0.2s;
+    padding: 1rem 2rem;
+  }
+
+  .nav .navbar.active {
+    background-color: var(--purple);
+    top: 100%;
+    right: 0;
+  }
+
+  .navbar .navItem {
+    text-align: end;
+  }
+
+  .nav .navIcon {
+    display: initial;
+  }
+
+  .btn_home {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
